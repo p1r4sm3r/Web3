@@ -1,8 +1,6 @@
 import requests
 import json
 import time
-import datetime
-import webbrowser
 
 webhook = "" # YOUR webhook
 url = requests.get("https://api-mainnet.magiceden.dev/v2/collections/copetown/stats") # example collection
@@ -13,9 +11,6 @@ floorPrice = floorPrice/1000000000 #bugged api
 #above comment now invalid, 0 is last listed/most recently listed
 url2 = requests.get("https://api-mainnet.magiceden.dev/v2/collections/copetown/listings?offset=0&limit=5") #only recently listed, not at floor price
 data2 = json.loads(url2.text)
-#print(url2.text)
-#print(json.dumps(data2, indent=4, sort_keys=True))
-
 loggedNFTS = []
 
 while True:
